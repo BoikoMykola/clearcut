@@ -11,10 +11,14 @@
   color: $c;
 }
 
+body{
+  min-width: 850px;
+}
+
 .wrapper {
   margin: 0 auto;
-  padding: 0 20px;
-  width: 1000px;
+  padding: 0 2%;
+  max-width: 1200px;
   background-color: #313131;
 }
 
@@ -35,6 +39,8 @@ header {
   border-bottom: 1px solid #A7C353;
 
   .logo {
+    width: 170px;
+
     p {
       text-transform: uppercase;
       @include fontprop(26px, 26px, Georgia, #666666);
@@ -79,12 +85,13 @@ header {
 }
 
 /* Собственно сам слайдер */
-.slider{
+.slider {
   max-width: 100%;
   position: relative;
   height: 350px;
   margin-bottom: 20px;
 }
+
 /* Картинка мастабируется по отношению к родительскому элементу */
 .slider .item img {
   object-fit: cover;
@@ -93,12 +100,13 @@ header {
   border: none !important;
   box-shadow: none !important;
 }
+
 /* Кнопки вперед и назад */
 .slider .prev, .slider .next {
   cursor: pointer;
   position: absolute;
   //top: 0;
-margin-left: 10px;
+  margin-left: 10px;
   top: 43%;
   width: 50px;
   height: 50px;
@@ -108,16 +116,19 @@ margin-left: 10px;
   transition: 0.6s ease;
   text-align: center;
 }
+
 .slider .next {
   right: 10px !important;
 
 }
+
 /* При наведении на кнопки добавляем фон кнопок */
 .slider .prev:hover,
 .slider .next:hover {
   background-color: #000;
   border: 1px solid #A7C353;
 }
+
 /* Заголовок слайда */
 .slideText {
   position: absolute;
@@ -126,28 +137,32 @@ margin-left: 10px;
   /* Выравнивание текста по горизонтали и по вертикали*/
   right: 60px;
   top: 210px;
-  h3{
+
+  h3 {
     @include fontprop(22px, 30.8px, Georgia, #fff);
     text-align: center;
-width: 350px;
+    width: 350px;
     font-weight: 400;
     background-color: #A7C353;
     margin: 10px 0;
     padding: 5px 0;
   }
-  p{
+
+  p {
     @include fontprop(13px, 15.6px, Georgia, #999999);
     background-color: #fff;
     padding: 11px;
     width: 350px;
   }
 }
+
 /* Кружочки */
 .slider-dots {
   text-align: center;
   margin-bottom: 36px;
 }
-.slider-dots_item{
+
+.slider-dots_item {
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -158,10 +173,12 @@ width: 350px;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
+
 .active,
 .slider-dots_item:hover {
   background-color: #fff;
 }
+
 /* Анимация слайдов */
 .slider .item {
   -webkit-animation-name: fade;
@@ -169,6 +186,7 @@ width: 350px;
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
 @-webkit-keyframes fade {
   from {
     opacity: .4
@@ -177,6 +195,7 @@ width: 350px;
     opacity: 1
   }
 }
+
 @keyframes fade {
   from {
     opacity: .4
@@ -212,6 +231,10 @@ width: 350px;
     text-decoration: none;
     text-align: right;
     display: block;
+
+    &:hover {
+      color: #1a7f1d;
+    }
   }
 
   .about {
@@ -237,7 +260,7 @@ width: 350px;
     .serv {
       display: flex;
       margin-bottom: 20px;
-
+      align-items: flex-start;
 
       img {
         margin-right: 20px;
@@ -301,6 +324,10 @@ width: 350px;
 
     a {
       @include fontprop(12px, 19.2px, Georgia, #A7C353);
+
+      &:hover {
+        color: #1a7f1d;
+      }
     }
 
     div {
@@ -319,6 +346,9 @@ width: 350px;
     a {
       @include fontprop(12px, 14.4px, Georgia, #A7C353);
 
+      &:hover {
+        color: #1a7f1d;
+      }
     }
 
     > div {
@@ -366,13 +396,19 @@ width: 350px;
         display: block;
         text-align: right;
         margin-top: 15px;
+
+        &:hover {
+          color: #1a7f1d;
+        }
       }
     }
   }
 
   .contact {
     width: 25%;
-
+label{
+  display: none;
+}
     input, textarea {
       border-radius: 5px;
       background-color: #383838;
@@ -393,6 +429,10 @@ width: 350px;
         width: 80px;
         font-weight: 700;
         cursor: pointer;
+
+        &:hover {
+          background-color: #1a7f1d;
+        }
       }
     }
 
@@ -407,4 +447,27 @@ width: 350px;
   justify-content: space-between;
   @include fontprop(12px, 12px, Georgia, #999999);
   padding: 20px 0;
+}
+
+@media only screen and (max-width: 950px) {
+  header {
+    nav {
+      a {
+
+        padding: 52px 2px 33px 2px;
+
+      }
+    }
+  }
+  .slideText{
+    display: none;
+  }
+  .copyright {
+    flex-direction: column;
+    align-items: center;
+    p{
+      padding-bottom: 10px;
+      flex-grow: 1;
+    }
+  }
 }

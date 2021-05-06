@@ -5,10 +5,14 @@
   box-sizing: border-box;
 }
 
+body {
+  min-width: 850px;
+}
+
 .wrapper {
   margin: 0 auto;
-  padding: 0 20px;
-  width: 1000px;
+  padding: 0 2%;
+  max-width: 1200px;
   background-color: #313131;
 }
 
@@ -27,6 +31,9 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #A7C353;
+}
+header .logo {
+  width: 170px;
 }
 header .logo p {
   text-transform: uppercase;
@@ -229,6 +236,9 @@ header nav :last-child {
   text-align: right;
   display: block;
 }
+.content a:hover {
+  color: #1a7f1d;
+}
 .content .about {
   width: 33.33%;
 }
@@ -248,6 +258,7 @@ header nav :last-child {
 .content .services .serv {
   display: flex;
   margin-bottom: 20px;
+  align-items: flex-start;
 }
 .content .services .serv img {
   margin-right: 20px;
@@ -310,6 +321,9 @@ header nav :last-child {
   font-family: Georgia;
   color: #A7C353;
 }
+.info .details a:hover {
+  color: #1a7f1d;
+}
 .info .details div {
   margin-top: 17px;
 }
@@ -325,6 +339,9 @@ header nav :last-child {
   line-height: 14.4px;
   font-family: Georgia;
   color: #A7C353;
+}
+.info .social a:hover {
+  color: #1a7f1d;
 }
 .info .social > div {
   padding: 14px 0 7px 0;
@@ -378,8 +395,14 @@ header nav :last-child {
   text-align: right;
   margin-top: 15px;
 }
+.info .blog > div a:hover {
+  color: #1a7f1d;
+}
 .info .contact {
   width: 25%;
+}
+.info .contact label {
+  display: none;
 }
 .info .contact input, .info .contact textarea {
   border-radius: 5px;
@@ -407,6 +430,9 @@ header nav :last-child {
   font-weight: 700;
   cursor: pointer;
 }
+.info .contact input:last-child:hover, .info .contact textarea:last-child:hover {
+  background-color: #1a7f1d;
+}
 .info .contact textarea {
   resize: none;
 }
@@ -419,6 +445,25 @@ header nav :last-child {
   font-family: Georgia;
   color: #999999;
   padding: 20px 0;
+}
+
+@media only screen and (max-width: 950px) {
+  header nav a {
+    padding: 52px 2px 33px 2px;
+  }
+
+  .slideText {
+    display: none;
+  }
+
+  .copyright {
+    flex-direction: column;
+    align-items: center;
+  }
+  .copyright p {
+    padding-bottom: 10px;
+    flex-grow: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
