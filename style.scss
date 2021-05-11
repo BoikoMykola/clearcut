@@ -11,15 +11,30 @@
   color: $c;
 }
 
-body{
+%link {
+  text-decoration: none;
+
+  &:visited {
+    color: #3592C4;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: #1a7f1d;
+  }
+}
+
+body {
   min-width: 850px;
+  background-color: #313131;
 }
 
 .wrapper {
-  margin: 0 auto;
-  padding: 0 2%;
   max-width: 1200px;
-  background-color: #313131;
+  margin: 0 auto;
 }
 
 .upLine {
@@ -63,8 +78,13 @@ header {
       text-decoration: none;
       display: inline-block;
 
-      &:hover {
+      &.current {
         background-color: #A7C353;
+        color: white;
+      }
+
+      &:hover {
+        background-color: #1a7f1d;
         color: white;
       }
 
@@ -228,13 +248,9 @@ header {
 
   a {
     @include fontprop(13px, 13px, Georgia, #A7C353);
-    text-decoration: none;
+    @extend %link;
     text-align: right;
     display: block;
-
-    &:hover {
-      color: #1a7f1d;
-    }
   }
 
   .about {
@@ -314,20 +330,13 @@ header {
     @include fontprop(12px, 19.2px, Georgia, #999999);
   }
 
-  a {
-    text-decoration: none;
-  }
-
   .details {
     width: 25%;
     margin-right: 20px;
 
     a {
       @include fontprop(12px, 19.2px, Georgia, #A7C353);
-
-      &:hover {
-        color: #1a7f1d;
-      }
+      @extend %link;
     }
 
     div {
@@ -346,9 +355,7 @@ header {
     a {
       @include fontprop(12px, 14.4px, Georgia, #A7C353);
 
-      &:hover {
-        color: #1a7f1d;
-      }
+      @extend %link;
     }
 
     > div {
@@ -393,22 +400,21 @@ header {
 
       a {
         @include fontprop(12px, 14.4px, Georgia, #A7C353);
+        @extend %link;
         display: block;
         text-align: right;
         margin-top: 15px;
-
-        &:hover {
-          color: #1a7f1d;
-        }
       }
     }
   }
 
   .contact {
     width: 25%;
-label{
-  display: none;
-}
+
+    label {
+      display: none;
+    }
+
     input, textarea {
       border-radius: 5px;
       background-color: #383838;
@@ -422,6 +428,12 @@ label{
         margin-top: 19px;
       }
 
+      &:focus {
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #fff;
+      }
+
       &:last-child {
         text-transform: uppercase;
         @include fontprop(13px, 20.58px, Georgia, #313131);
@@ -432,6 +444,11 @@ label{
 
         &:hover {
           background-color: #1a7f1d;
+        }
+
+        &:focus {
+          outline: none;
+          border: none;
         }
       }
     }
@@ -459,13 +476,14 @@ label{
       }
     }
   }
-  .slideText{
+  .slideText {
     display: none;
   }
   .copyright {
     flex-direction: column;
     align-items: center;
-    p{
+
+    p {
       padding-bottom: 10px;
       flex-grow: 1;
     }

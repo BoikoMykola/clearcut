@@ -5,15 +5,27 @@
   box-sizing: border-box;
 }
 
+.info .blog > div a, .info .social a, .info .details a, .content a {
+  text-decoration: none;
+}
+.info .blog > div a:visited, .info .social a:visited, .info .details a:visited, .content a:visited {
+  color: #3592C4;
+}
+.info .blog > div a:active, .info .social a:active, .info .details a:active, .content a:active {
+  text-decoration: underline;
+}
+.info .blog > div a:hover, .info .social a:hover, .info .details a:hover, .content a:hover {
+  color: #1a7f1d;
+}
+
 body {
   min-width: 850px;
+  background-color: #313131;
 }
 
 .wrapper {
-  margin: 0 auto;
-  padding: 0 2%;
   max-width: 1200px;
-  background-color: #313131;
+  margin: 0 auto;
 }
 
 .upLine {
@@ -64,8 +76,12 @@ header nav a {
   text-decoration: none;
   display: inline-block;
 }
-header nav a:hover {
+header nav a.current {
   background-color: #A7C353;
+  color: white;
+}
+header nav a:hover {
+  background-color: #1a7f1d;
   color: white;
 }
 header nav :last-child {
@@ -232,12 +248,8 @@ header nav :last-child {
   line-height: 13px;
   font-family: Georgia;
   color: #A7C353;
-  text-decoration: none;
   text-align: right;
   display: block;
-}
-.content a:hover {
-  color: #1a7f1d;
 }
 .content .about {
   width: 33.33%;
@@ -308,9 +320,6 @@ header nav :last-child {
   font-family: Georgia;
   color: #999999;
 }
-.info a {
-  text-decoration: none;
-}
 .info .details {
   width: 25%;
   margin-right: 20px;
@@ -320,9 +329,6 @@ header nav :last-child {
   line-height: 19.2px;
   font-family: Georgia;
   color: #A7C353;
-}
-.info .details a:hover {
-  color: #1a7f1d;
 }
 .info .details div {
   margin-top: 17px;
@@ -339,9 +345,6 @@ header nav :last-child {
   line-height: 14.4px;
   font-family: Georgia;
   color: #A7C353;
-}
-.info .social a:hover {
-  color: #1a7f1d;
 }
 .info .social > div {
   padding: 14px 0 7px 0;
@@ -395,9 +398,6 @@ header nav :last-child {
   text-align: right;
   margin-top: 15px;
 }
-.info .blog > div a:hover {
-  color: #1a7f1d;
-}
 .info .contact {
   width: 25%;
 }
@@ -419,6 +419,11 @@ header nav :last-child {
 .info .contact input:first-child, .info .contact textarea:first-child {
   margin-top: 19px;
 }
+.info .contact input:focus, .info .contact textarea:focus {
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
 .info .contact input:last-child, .info .contact textarea:last-child {
   text-transform: uppercase;
   font-size: 13px;
@@ -432,6 +437,10 @@ header nav :last-child {
 }
 .info .contact input:last-child:hover, .info .contact textarea:last-child:hover {
   background-color: #1a7f1d;
+}
+.info .contact input:last-child:focus, .info .contact textarea:last-child:focus {
+  outline: none;
+  border: none;
 }
 .info .contact textarea {
   resize: none;
