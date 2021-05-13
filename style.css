@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 .info .blog > div a:visited, .info .social a:visited, .info .details a:visited, .content a:visited {
-  color: #3592C4;
+  color: #A7C353;
 }
 .info .blog > div a:active, .info .social a:active, .info .details a:active, .content a:active {
   text-decoration: underline;
